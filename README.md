@@ -48,8 +48,8 @@ To get a local copy up and running, follow these steps:
    npm install
 
 4. **Set up environment variables:**
-   - Create a .env file in the backend directory and add your AWS S3 credentials and JWT secret.
-   - Example .env file:
+- Create a .env file in the backend directory and add your AWS S3 credentials and JWT secret.
+- Example .env file:
    ```bash
    AWS_ACCESS_KEY_ID=your-access-key-id
    AWS_SECRET_ACCESS_KEY=your-secret-access-key
@@ -60,9 +60,8 @@ To get a local copy up and running, follow these steps:
 5. **Run the backend server:**
    ```bash
    node app.js
-
-   - The backend will run on http://localhost:3000.
+- The backend will run on http://localhost:3000.
 
 6. **Serve the frontend:**
-   - Open the HTML files (login.html, signup.html, home.html) in your browser to test the frontend.
+- Open the HTML files (login.html, signup.html, home.html) in your browser to test the frontend.
 
