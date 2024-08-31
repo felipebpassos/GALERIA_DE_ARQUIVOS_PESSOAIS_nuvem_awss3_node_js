@@ -66,3 +66,84 @@ To get a local copy up and running, follow these steps:
 6. **Serve the frontend:**
    Open the HTML files (login.html, signup.html, home.html) in your browser to test the frontend.
 
+## 💻 Usage
+
+1. **Sign Up:**
+   - Open the `signup.html` file in your browser.
+   - Fill in your details and sign up to create a new account.
+
+2. **Log In:**
+   - Open the `login.html` file in your browser.
+   - Use your credentials to log in.
+
+3. **Upload Media:**
+   - After logging in, you’ll be redirected to the `home.html` page.
+   - Click on the upload button to select photos or videos from your device.
+   - Uploaded media will be securely stored in your AWS S3 bucket.
+
+4. **View Media:**
+   - Your uploaded media will be displayed on the homepage.
+   - Media files are accessed via secure pre-signed URLs.
+
+## 🖼️ Screenshots
+
+- **Sign Up Page:**
+  ![Sign Up Page](link-to-signup-page-screenshot)
+
+- **Log In Page:**
+  ![Log In Page](link-to-login-page-screenshot)
+
+- **Home Page:**
+  ![Home Page](link-to-home-page-screenshot)
+
+## 📚 API Endpoints
+
+- **POST /signup**: Register a new user.
+  - Request: `{ "username": "yourusername", "password": "yourpassword" }`
+  - Response: `{ "message": "User registered successfully" }`
+
+- **POST /login**: Authenticate an existing user.
+  - Request: `{ "username": "yourusername", "password": "yourpassword" }`
+  - Response: `{ "token": "your-jwt-token" }`
+
+- **POST /upload**: Upload a media file.
+  - Headers: `Authorization: Bearer your-jwt-token`
+  - Request: FormData with the file.
+  - Response: `{ "message": "File uploaded successfully", "fileUrl": "url-to-access-file" }`
+
+- **GET /media**: Retrieve all uploaded media URLs for the logged-in user.
+  - Headers: `Authorization: Bearer your-jwt-token`
+  - Response: `{ "media": ["url1", "url2", ...] }`
+
+## 🔮 Future Enhancements
+
+- **Thumbnail Previews**: Generate and display thumbnail previews for videos.
+- **Batch Uploads**: Allow users to upload multiple files at once.
+- **User Profiles**: Add user profile pages with options to update details.
+- **Sharing Options**: Allow users to share media with others securely.
+- **Enhanced Security**: Implement additional security features such as 2FA.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## 📬 Contact
+
+If you have any questions or suggestions, feel free to reach out:
+
+- **Email**: yourname@example.com
+- **LinkedIn**: [Your LinkedIn](https://www.linkedin.com/in/yourprofile/)
+- **GitHub**: [Your GitHub](https://github.com/yourusername)
+
+
+
