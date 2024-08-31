@@ -1,0 +1,12 @@
+# Node.js
+node_modules/
+.env
+npm-debug.log
+yarn-error.log
+
+# Frontend
+/frontend/node_modules/
+
+# Sistema
+.DS_Store
+*.log

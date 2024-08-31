@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mt-5">Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <p class="text-center mt-3"><a href="cadastro.html">Não tem uma conta? Cadastre-se</a></p>
+        <div id="error-message" class="alert alert-danger mt-3" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+  <script src="conexao.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('error-message');
+      
+      try {
+        const response = await login(username, password);
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+          window.location.href = 'home.html';
+        } else {
+          errorMessage.textContent = 'Login falhou. Verifique suas credenciais.';
+          errorMessage.style.display = 'block';
+        }
+      } catch (error) {
+        errorMessage.textContent = 'Erro ao tentar fazer login. ' + error.message;
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

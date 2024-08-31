@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet"> <!-- Inclua o arquivo CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- FontAwesome -->
+</head>
+
+<body>
+  <div id="loading" class="loading">
+    <div>Carregando...</div>
+  </div>
+  <div id="mainContent" class="container hidden" style="position: relative;">
+    <button id="logoutButton" class="btn btn-primary logout-button">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h2 class="text-center mt-5">Galeria de Arquivos</h2>
+        <form id="uploadForm">
+          <div class="form-group">
+            <label for="file">Selecione um arquivo</label>
+            <input type="file" class="form-control" id="file" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Upload</button>
+        </form>
+        <div id="fileList" class="mt-5">
+          <h3>Seus Arquivos</h3>
+          <div id="files" class="row"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="conexao.js"></script>
+  <script>
+    async function checkAuth() {
+      try {
+        const isValid = await verifyToken();
+        if (!isValid) {
+          window.location.href = 'login.html';
+        } else {
+          document.getElementById('loading').classList.add('hidden');
+          document.getElementById('mainContent').classList.remove('hidden');
+        }
+      } catch (error) {
+        console.error('Erro ao verificar autenticação:', error);
+        window.location.href = 'login.html';
+      }
+    }
+
+    // Verifica a autenticação quando a página carrega
+    checkAuth();
+
+    document.addEventListener('DOMContentLoaded', async function () {
+      try {
+        const files = await getFiles();
+        const fileList = document.getElementById('files');
+        fileList.innerHTML = ''; // Limpa a lista de arquivos antes de adicionar novos
+
+        files.forEach(file => {
+          const col = document.createElement('div');
+          col.className = 'col-md-4 file-item';
+
+          if (file.tipo === 'foto') {
+            const img = document.createElement('img');
+            img.src = file.s3_url; // Verifique se o campo correto é 's3_url' ou 'url'
+            img.alt = file.filename; // Texto alternativo para a imagem
+            col.appendChild(img);
+          } else if (file.tipo === 'video') {
+            const video = document.createElement('video');
+            video.src = file.s3_url; // Verifique se o campo correto é 's3_url' ou 'url'
+            video.controls = true; // Adiciona controles ao vídeo
+            video.alt = file.filename; // Texto alternativo para o vídeo
+            col.appendChild(video);
+          }
+
+          fileList.appendChild(col);
+        });
+      } catch (error) {
+        console.error('Erro ao carregar os arquivos:', error);
+      }
+    });
+
+    document.getElementById('uploadForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const fileInput = document.getElementById('file');
+      const file = fileInput.files[0];
+
+      try {
+        const response = await uploadFile(file);
+        if (response.message === 'Upload realizado com sucesso.') {
+          alert('Arquivo enviado com sucesso.');
+          window.location.reload(); // Recarrega a página para atualizar a lista de arquivos
+        } else {
+          alert('Erro ao enviar o arquivo.');
+        }
+      } catch (error) {
+        console.error('Erro ao enviar o arquivo:', error);
+      }
+    });
+
+    document.getElementById('logoutButton').addEventListener('click', async function () {
+      try {
+        // Limpe o token de autenticação aqui (por exemplo, removendo-o do armazenamento local ou cookies)
+        localStorage.removeItem('token');
+        // Redireciona para a página de login
+        window.location.href = 'login.html';
+      } catch (error) {
+        console.error('Erro ao deslogar:', error);
+      }
+    });
+  </script>
+</body>
+
+</html>
