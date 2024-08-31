@@ -26,7 +26,7 @@
 [![S3Gallery Demo](link-to-demo-image)](link-to-live-demo)
 
 ## 🛠️ Technologies Used
-- **Backend**: Node.js, Express, JWT
+- **Backend**: Node.js, Express, API Rest, JWT
 - **Frontend**: HTML, CSS, JavaScript
 - **Database**: AWS S3 for media storage, SQL database for user and archive metadata
 - **Others**: AWS SDK, Multer, bcrypt
