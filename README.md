@@ -28,7 +28,7 @@
 ## 🛠️ Technologies Used
 - **Backend**: Node.js, Express, JWT
 - **Frontend**: HTML, CSS, JavaScript
-- **Database**: AWS S3 for media storage
+- **Database**: AWS S3 for media storage, SQL database for user and archive metadata
 - **Others**: AWS SDK, Multer, bcrypt
 
 ## 📦 Installation
