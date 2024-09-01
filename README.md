@@ -54,7 +54,7 @@ To get a local copy up and running, follow these steps:
    ```bash
    node app.js
 
-   The backend will run on http://localhost:3000.
+The backend will run on http://localhost:3000.
 
 6. **Serve the frontend:**
    Open the HTML files (login.html, signup.html, home.html) in your browser to test the frontend.
@@ -78,7 +78,7 @@ To get a local copy up and running, follow these steps:
    - Your uploaded media will be displayed on the homepage.
    - Media files are accessed via secure pre-signed URLs.
 
-## 📚 API Endpoints
+## API Endpoints
 
 - **POST /signup**: Register a new user.
   - Request: `{ "username": "yourusername", "password": "yourpassword" }`
