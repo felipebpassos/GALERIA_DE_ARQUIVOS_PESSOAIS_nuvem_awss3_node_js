@@ -4,34 +4,27 @@
 
 ##
 - [Features](#-features)
-- [Demo](#-demo)
 - [Technologies Used](#-technologies-used)
 - [Installation](#-installation)
 - [Usage](#-usage)
-- [Screenshots](#-screenshots)
 - [API Endpoints](#-api-endpoints)
-- [Future Enhancements](#-future-enhancements)
-- [Contributing](#-contributing)
 - [License](#-license)
 - [Contact](#-contact)
 
-## ✨ Features
+## Features
 - **User Authentication**: Secure sign-up and login system using JWT.
 - **Media Upload**: Upload photos and videos to your personal gallery.
 - **AWS S3 Storage**: Safely store media files in an AWS S3 bucket.
 - **Secure Access**: Media files are accessed through pre-signed URLs, ensuring that only authorized users can access their own media.
 - **Responsive Design**: Frontend pages are responsive and accessible on various devices.
 
-## 🚀 Demo
-[![S3Gallery Demo](link-to-demo-image)](link-to-live-demo)
-
-## 🛠️ Technologies Used
+## Technologies Used
 - **Backend**: Node.js, Express, API Rest, JWT
 - **Frontend**: HTML, CSS, JavaScript
 - **Database**: AWS S3 for media storage, SQL database for user and archive metadata
 - **Others**: AWS SDK, Multer, bcrypt
 
-## 📦 Installation
+## Installation
 To get a local copy up and running, follow these steps:
 
 1. **Clone the repository:**
@@ -66,7 +59,7 @@ To get a local copy up and running, follow these steps:
 6. **Serve the frontend:**
    Open the HTML files (login.html, signup.html, home.html) in your browser to test the frontend.
 
-## 💻 Usage
+## Usage
 
 1. **Sign Up:**
    - Open the `signup.html` file in your browser.
@@ -84,17 +77,6 @@ To get a local copy up and running, follow these steps:
 4. **View Media:**
    - Your uploaded media will be displayed on the homepage.
    - Media files are accessed via secure pre-signed URLs.
-
-## 🖼️ Screenshots
-
-- **Sign Up Page:**
-  ![Sign Up Page](link-to-signup-page-screenshot)
-
-- **Log In Page:**
-  ![Log In Page](link-to-login-page-screenshot)
-
-- **Home Page:**
-  ![Home Page](link-to-home-page-screenshot)
 
 ## 📚 API Endpoints
 
@@ -115,29 +97,11 @@ To get a local copy up and running, follow these steps:
   - Headers: `Authorization: Bearer your-jwt-token`
   - Response: `{ "media": ["url1", "url2", ...] }`
 
-## 🔮 Future Enhancements
-
-- **Thumbnail Previews**: Generate and display thumbnail previews for videos.
-- **Batch Uploads**: Allow users to upload multiple files at once.
-- **User Profiles**: Add user profile pages with options to update details.
-- **Sharing Options**: Allow users to share media with others securely.
-- **Enhanced Security**: Implement additional security features such as 2FA.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a pull request.
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 📬 Contact
+## Contact
 
 If you have any questions or suggestions, feel free to reach out:
 
