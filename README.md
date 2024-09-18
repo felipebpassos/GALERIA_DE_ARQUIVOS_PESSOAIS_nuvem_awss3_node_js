@@ -29,7 +29,7 @@ To get a local copy up and running, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/S3Gallery.git
+   git clone https://github.com/felipebpassos/S3Gallery.git
 
 2. **Navigate to the project directory:**
    ```bash
