@@ -4,7 +4,7 @@
 
 ##
 - [Features](#features)
-- [Technologies Used](#technologies-used)
+- [Technologies Used](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
@@ -18,7 +18,7 @@
 - **Secure Access**: Media files are accessed through pre-signed URLs, ensuring that only authorized users can access their own media.
 - **Responsive Design**: Frontend pages are responsive and accessible on various devices.
 
-## Technologies Used
+## Tech stack
 - **Backend**: Node.js, Express, API Rest, JWT
 - **Frontend**: HTML, CSS, JavaScript
 - **Database**: AWS S3 for media storage, SQL database for user and archive metadata
