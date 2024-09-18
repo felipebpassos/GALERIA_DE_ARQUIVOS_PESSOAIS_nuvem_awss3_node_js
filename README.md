@@ -3,13 +3,13 @@
 **S3Gallery** is a secure and scalable media storage solution that allows users to sign up, log in, and upload their photos and videos. This media is then stored safely in an AWS S3 bucket, accessible only to the registered user through pre-signed URLs that ensure secure and temporary access.
 
 ##
-- [Features](#-features)
-- [Technologies Used](#-technologies-used)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [API Endpoints](#-api-endpoints)
-- [License](#-license)
-- [Contact](#-contact)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [License](#license)
+- [Contact](#contact)
 
 ## Features
 - **User Authentication**: Secure sign-up and login system using JWT.
